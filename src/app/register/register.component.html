@@ -1,0 +1,38 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Register Form</h1>
+        <form [formGroup]="formValue">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input formControlName="name"  id="name" type="text" class="form-control" placeholder="Enter  Name.." required> 
+            </div>
+            <div class="form-group">
+                <label for="password" >Password</label>
+                <input id="password" formControlName="password" type="text"  class="form-control" placeholder="Enter Password.." required> 
+            </div>
+            <div class="form-group">
+                <label for="emailid">EmailId</label>
+                <input id="emailid" type="email" formControlName="emailid" class="form-control" placeholder="Enter email.." required> <br>
+            </div>
+            <div class="form-group">
+                <label for="dob" >Date Of Birth</label>
+                <input id="dob" formControlName="dob" type="text"  class="form-control" placeholder="Enter Dob.." required> 
+            </div>
+            <div class="form-group">
+                <label for="address" >Address</label>
+                <input id="address" formControlName="address" type="text"  class="form-control" placeholder="Enter address.." required> 
+            </div>
+            <div class="form-group">
+                <label for="gender" >Gender</label>
+                <input id="gender" formControlName="gender" type="text"  class="form-control" placeholder="Enter gender.." required> 
+            </div>
+            <div class="form-group">
+                <label for="mobile" >Mobile No</label>
+                <input id="mobile" formControlName="mobile" type="text"  class="form-control" placeholder="Enter mobile.." required> 
+            </div>
+            
+            <button type="submit"  (click)="postUserDetails()" class="btn btn-primary ">Create</button>
+            
+        </form>
+    </div>
+</div>

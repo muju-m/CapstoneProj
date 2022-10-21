@@ -1,0 +1,31 @@
+
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="../../assets/Aadhaar_Logo.svg.webp" alt="Avatar" class="avatar">
+    <h2>Login Form</h2>
+  </div>
+
+  <div class="container">
+    <label for="mobile"><b>Mobile Number</b></label>
+    <input type="text" placeholder="Enter Mobile No" name="mobile" [(ngModel)]="model.mobile">
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="model.password">
+        
+    <button type="submit" (click)="loginUser4()">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <h2>For new users :</h2>
+    <button type="button" class="cancelbtn" (click)="registerPage()">Register</button>
+    
+  </div>
+  <div class="container" style="background-color:#f1f1f1">
+    <h2>For Admin only :</h2>
+    <button type="button" class="cancelbtn" (click)="AdminLogin()">Login</button>
+  </div>
+</form>

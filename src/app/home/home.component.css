@@ -1,0 +1,25 @@
+.image{
+    
+    margin-right: auto;
+    margin-left: auto;
+width: 500px;  
+height: auto;  
+text-align: center;  
+padding: 15px 15px;  
+border: 3px solid rgb(33, 139, 192);  
+}
+img{
+    
+    max-width:100%;
+    height:auto;
+}
+
+.jumbotron{
+    margin-right: auto;
+    margin-left: auto;
+width: 500px;  
+height: auto;  
+text-align: center;  
+padding: 15px 15px;  
+
+}

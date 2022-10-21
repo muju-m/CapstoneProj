@@ -1,0 +1,102 @@
+<div class="container" style="margin-top: 100px;">
+
+    <div class="jumbotron">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-info float-left">Admin Dashboad</h2>
+            <button type="button" (click)="addButtonClickFunction()" class="btn btn-info mb-3 float-right" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-plus"></i> Add New User
+            </button>
+        </div>
+        
+        <div class="col-12">
+            <table class="table table-sm table-stripped">
+                <thead>
+                    <tr class="bg-info text-white text-center">
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>PASSWORD</th>
+                        <th>EMAIL ID</th>
+                        <th>DOB</th>
+                        <th>ADDRESS</th>
+                        <th>GENDER</th>
+                        <th>MOBILE NO</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of userData" class="text-center">
+                        <td>{{row.id}}</td>
+                        <td>{{row.name}}</td>
+                        <td>{{row.password}}</td>
+                        <td>{{row.emailid}}</td>
+                        <td>{{row.dob}}</td>
+                        <td>{{row.address}}</td>
+                        <td>{{row.gender}}</td>
+                        <td>{{row.mobile}}</td>
+                        <td class="text-right">
+                            <button (click)="updateUser(row)" class="btn btn-outline-info pl-3 pr-3 mx-2"data-toggle="modal" data-target="#exampleModal"><i class="fas fa-pencil"></i> Edit</button>
+                            <button (click)="deleteUser(row)"  class="btn btn-outline-danger pl-3 " ><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <button type="button" (click)="returnLogin()" class="btn btn-info mb-3 float-right" data-toggle="modal" data-target="#exampleModal">
+                    Back To Login
+                </button>
+            </table>
+        </div>
+        
+    </div>
+</div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary" *ngIf="showAddTitle" id="exampleModalLabel">Add New Data</h5>
+                <h5 class="modal-title text-primary" *ngIf="showUpdateTitle" id="exampleModalLabel">Update Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input formControlName="name"  id="name" type="text" class="form-control" placeholder="Enter  Name.." required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="password" >Password</label>
+                        <input id="password" formControlName="password" type="text"  class="form-control" placeholder="Enter Password.." required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="emailid">EmailId</label>
+                        <input id="emailid" type="email" formControlName="emailid" class="form-control" placeholder="Enter email.." required> <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob" >Date Of Birth</label>
+                        <input id="dob" formControlName="dob" type="text"  class="form-control" placeholder="Enter Dob.." required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="address" >Address</label>
+                        <input id="address" formControlName="address" type="text"  class="form-control" placeholder="Enter address.." required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" >Gender</label>
+                        <input id="gender" formControlName="gender" type="text"  class="form-control" placeholder="Enter gender.." required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile" >Mobile No</label>
+                        <input id="mobile" formControlName="mobile" type="text"  class="form-control" placeholder="Enter mobile.." required> 
+                    </div>
+                    <button type="button" id="cancel" class="btn btn-primary" data-dismiss="modal">Cancel</button>&nbsp;
+                    <button type="submit" *ngIf="showAdd" (click)="postUserDetails()" class="btn btn-primary mx-2">Save</button>
+                    <button type="submit" *ngIf="showUpdate" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

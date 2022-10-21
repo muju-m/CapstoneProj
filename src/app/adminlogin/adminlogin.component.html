@@ -1,0 +1,19 @@
+<form action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <img src="../../assets/Aadhaar_Logo.svg.webp" alt="Avatar" class="avatar">
+      <h2>Admin Login</h2>
+    </div>
+  
+    <div class="container">
+      <label for="Name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="Name" [(ngModel)]="model.name">
+  
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="model.password">
+          
+      <button type="submit" (click)="adminlogin()">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  </form>
